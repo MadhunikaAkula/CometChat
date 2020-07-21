@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CometChat } from '@cometchat-pro/chat';
 import { COMETCHAT_CONSTANTS } from '../CONSTS';
-import{Router}from'@angular/router';
+import { Router } from '@angular/router';
+import { NgxSpinnerService } from "ngx-spinner";
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,20 +11,20 @@ import{Router}from'@angular/router';
 })
 export class LoginComponent implements OnInit {
   showUi: boolean = false;
-  showloader = false;
   userId;
-  constructor(public router:Router) { }
+  constructor(private spinner: NgxSpinnerService,public router: Router) { }
 
   ngOnInit() {
   }
   login() {
-    this.showloader = true;
+    this.spinner.show();
     CometChat.login(this.userId, COMETCHAT_CONSTANTS.API_KEY).then((user) => {
-      alert('sucess');
-      this.router.navigate(['/menu']);
+      localStorage.setItem('user', JSON.stringify(user));
+      this.spinner.hide();
+
+      this.router.navigate(['/embeded-app']);
     }, error => {
-     alert(error);
-      this.showloader = false;
+      alert(error);
     });
   }
 }

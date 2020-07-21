@@ -2,12 +2,15 @@ import { Component, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 import { SIDEBAR_ACTIONS, NAVIGATION_MENU_ACTIONS, CONVERSATIONS_SCREEN_ACTIONS, CALL_SCREEN_ACTIONS } from '../string_constants';
 import { CometChatMainManager } from './cometchat-manager';
 
+import{Router}from'@angular/router';
+
 @Component({
   selector: 'cometchat-embedded',
   templateUrl: './cometchat-embedded.component.html',
   styleUrls: ['./cometchat-embedded.component.scss']
 })
 export class CometchatEmbeddedComponent implements OnInit {
+  LoggedUser:any;
   user?: object;
   json = JSON;
   group?: object;
@@ -16,9 +19,10 @@ export class CometchatEmbeddedComponent implements OnInit {
   @Input() friendsOnly?= false;
   cometchatManager: CometChatMainManager = new CometChatMainManager();
   sidebarActions: { action: string, payload?: object | any } = { action: "" }
-  constructor(private cdRef: ChangeDetectorRef) { }
+  constructor(private cdRef: ChangeDetectorRef,private router:Router) { }
 
   ngOnInit() {
+  this.LoggedUser= JSON.parse(localStorage.getItem('user'));
     this.cometchatManager.isLoggedIn(() => {
       this.cometchatManager.attachListener((event) => {
 
@@ -44,6 +48,13 @@ export class CometchatEmbeddedComponent implements OnInit {
     })
   }
 
+  logOut(){
+    // localStorage.removeItem("user");
+    localStorage.clear();
+      this.router.navigate(['/']);
+      // window.location.reload();
+
+   }
   handleCallScreenActions = (event) => {
     let tempUser = this.user;
     let tempGroup = this.group;

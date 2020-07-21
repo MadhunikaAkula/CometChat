@@ -1,4 +1,101 @@
-<div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">SMS</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item active"  >
+              <a class="nav-link" href="/embeded-app">Chat <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link"routerLinkActive="active-link"routerLink="/" >Features</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active-link"routerLink="/">Pricing</a>
+          </li>
+      </ul>
+      <ul class="navbar-nav">
+          <!-- Dropdown -->
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop"  data-toggle="dropdown">
+                   <a >{{LoggedUser.name}}</a>
+              </a>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" href="/menu">profile</a>
+                  <a class="dropdown-item" (click)="logOut()">Logout</a>
+              </div>
+          </li>
+      </ul>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <img class="image" [src]="LoggedUser.avatar"style="width:20%;">
+  </div>
+  <br>
+</div>
+<form action="/action_page.php">
+  <div class="row">
+    <div class="col-md-1">
+      <label for="name"><b>Name:</b></label>
+    </div>
+    <div class="col-md-6">
+      <input type="text"  disabled class="form-control" id="name" placeholder="Enter username" name="name" [(ngModel)]="LoggedUser.name">
+    </div>
+  </div>&nbsp;
+  <div class="row">
+    <div class="col-md-1">
+      <label for="name"><b>Role:</b></label>
+    </div>
+    <div class="col-md-6">
+      <input type="text"  disabled class="form-control" id="role" placeholder="Enter username" name="role" [(ngModel)]="LoggedUser.role">
+    </div>
+  </div>&nbsp;
+  <div class="row">
+    <div class="col-md-1">
+      <label for="name"><b>Uid:</b></label>
+    </div>
+    <div class="col-md-6">
+      <input type="text"  disabled class="form-control" id="uid" placeholder="Enter username" name="uid" [(ngModel)]="LoggedUser.uid">
+    </div>
+  </div>&nbsp;
+  <div class="row">
+    <div class="col-md-1">
+      <label for="name"><b>Image:</b></label>
+    </div>
+    <div class="col-md-6">
+      <input type="text"  disabled class="form-control" id="avatar" placeholder="Enter username" name="avatar" [(ngModel)]="LoggedUser.avatar">
+    </div>
+  </div>
+  </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
 
    <div style="width: 90%; margin: 50px;  margin-left: auto; margin-right: auto; max-width:500px;">
     <div
@@ -21,10 +118,14 @@
         </div>
       </a>
     </div>
-  </div> 
+  </div>  -->
+<!-- <div class="card bg-dark text-white">
+  <div class="card-body">
+     <button class="btn btn-primary"><a href="/embeded-app">Launch</a></button>
+  </div>
+</div> -->
 
-
-  <div style="width: 90%; margin: 50px;   margin-left: auto; margin-right: auto; max-width:500px;">
+  <!-- <div style="width: 90%; margin: 50px;   margin-left: auto; margin-right: auto; max-width:500px;">
     <div
       style="background-color: white; width: 100%; height: 100%; box-shadow: 0px 0px 5px 0px #3335; border-radius: 10px; padding: 5px;">
       <div style="text-align: center;">
@@ -55,11 +156,8 @@
 
       </div>
     </div>
-  </div>
-
-
-
-  <div style="width: 90%; margin: 50px;   margin-left: auto; margin-right: auto; max-width:500px;">
+  </div> -->
+  <!-- <div style="width: 90%; margin: 50px;   margin-left: auto; margin-right: auto; max-width:500px;">
     <div
       style="background-color: white; width: 100%; height: 100%; box-shadow: 0px 0px 5px 0px #3335; border-radius: 10px; padding: 5px;">
       <div style="text-align: center;">
@@ -93,17 +191,5 @@
         </div>
       </div>
     </div>
-  </div> 
-
-
-
-
-
-<div style="width: 90%; margin: 50px;  margin-left: auto; margin-right: auto; max-width: max-content;">
-  <div (click)="logout()"
-    style="background-color: #333; color: white; cursor: pointer;  padding:10px; width: 100%; height: 100%; box-shadow: 0px 0px 5px 0px #3335; border-radius: 10px;">
-    <div style="text-align: center;">
-      Logout
-    </div>
-  </div>
-</div>
+  </div>  -->
+ 

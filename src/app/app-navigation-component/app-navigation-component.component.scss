@@ -1,36 +1,64 @@
-.chips {
-  margin: auto;
-  background: #AAA;
-  color: #FFF;
-  padding: 3px;
-  border-radius: 5px;
+// .chips {
+//   margin: auto;
+//   background: #AAA;
+//   color: #FFF;
+//   padding: 3px;
+//   border-radius: 5px;
+// }
+
+// .chips:hover {
+//   cursor: pointer;
+//   background: darken($color: #AAA, $amount: 20%);
+// }
+
+// a,
+// a:visited,
+// a:active,
+// a:hover {
+//   color: white;
+//   text-decoration: none;
+
+// }
+
+// .launchButton,
+// .launchButton:visited,
+// .launchButton:active {
+//   color: rgb(67, 171, 255);
+//   font-weight: 600;
+
+
+// }
+
+// .launchButton:hover {
+//   color: darken(rgb(67, 171, 255), 20%);
+//   font-weight: 600;
+
+// }
+.container2 {
+  margin-top: 70px;
 }
-
-.chips:hover {
-  cursor: pointer;
-  background: darken($color: #AAA, $amount: 20%);
-}
-
-a,
-a:visited,
-a:active,
-a:hover {
-  color: white;
-  text-decoration: none;
+.image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  height: 177px;
 
 }
-
-.launchButton,
-.launchButton:visited,
-.launchButton:active {
-  color: rgb(67, 171, 255);
-  font-weight: 600;
-
-
+h3{
+  text-transform: uppercase; 
+  margin-left: auto;
+  margin-right: auto;
+  color: mediumseagreen;
 }
-
-.launchButton:hover {
-  color: darken(rgb(67, 171, 255), 20%);
-  font-weight: 600;
-
+.emoji{
+    height: 20px;
+    margin-left: 0;
+}
+.center{
+  margin-left: 46%;
+  margin-right: auto;
+}
+form{
+    margin-left:31%
 }
