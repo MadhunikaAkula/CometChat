@@ -1,34 +1,33 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">SMS</a>
+<nav class="navbar navbar-expand-md navbar-dark bg">
+  <a class="navbar-brand" href="#"><i class="fa fa-sign-language navname" aria-hidden="true"></i></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mr-auto">
           <li class="nav-item active"  >
-              <a class="nav-link" href="/embeded-app">Chat <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/embeded-app"><i class="fa fa-whatsapp" aria-hidden="true"></i>&nbsp;Chat<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-              <a class="nav-link"routerLinkActive="active-link"routerLink="/" >Features</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" routerLinkActive="active-link"routerLink="/">Settings</a>
+              <a class="nav-link"routerLinkActive="active-link"routerLink="/" ><i class="fa fa-snowflake-o" aria-hidden="true"></i>&nbsp;Features</a>
           </li>
       </ul>
       <ul class="navbar-nav">
-          <!-- Dropdown -->
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbardrop"  data-toggle="dropdown">
-                   <a >{{LoggedUser.name}}</a>
+                   <a class="logName"><i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp;{{LoggedUser.name}}</a>
               </a>
               <div class="dropdown-menu">
-                  <a class="dropdown-item" href="/menu">profile</a>
-                  <a class="dropdown-item" (click)="logOut()">Logout</a>
+                  <a class="dropdown-item" href="/menu"><i class="fa fa-user e1" aria-hidden="true"></i>&nbsp;profile</a>
+                  <a class="dropdown-item"><i class="fa fa-cogs e1" aria-hidden="true"></i>&nbsp;Settings</a>
+                  <a class="dropdown-item" (click)="logOut()"><i class="fa fa-sign-out e1" aria-hidden="true"></i>&nbsp;Logout</a>
+
               </div>
           </li>
       </ul>
   </div>
 </nav>
+
 <div class="cometchat-embedded-container">
   <div class="cometchat-embedded-sidebar">
     <cometchat-sidebar [friendsOnly]=friendsOnly (actionPerformed)=handleSidebarEvents($event)

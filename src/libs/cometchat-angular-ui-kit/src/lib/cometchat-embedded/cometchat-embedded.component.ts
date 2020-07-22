@@ -1,7 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 import { SIDEBAR_ACTIONS, NAVIGATION_MENU_ACTIONS, CONVERSATIONS_SCREEN_ACTIONS, CALL_SCREEN_ACTIONS } from '../string_constants';
 import { CometChatMainManager } from './cometchat-manager';
-
 import{Router}from'@angular/router';
 
 @Component({

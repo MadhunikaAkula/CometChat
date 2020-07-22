@@ -45,7 +45,8 @@ const routes: Routes = [
         path: 'status-indicator',
         component: StatusIndicatorComponent,
         canActivate: [AuthGuard]
-    }, {
+    }, 
+    {
         path: 'menu',
         component: AppNavigationComponentComponent,
         canActivate: [AuthGuard]

@@ -13,11 +13,11 @@ import { DemoComponent } from './demo/demo.component';
 import { LoaderComponent } from './loader/loader.component';
 import { CometchatAngularUiKitModule } from 'src/libs/cometchat-angular-ui-kit/src/lib/cometchat-angular-ui-kit.module';
 import { LoginComponent } from './login/login.component';
-// import { NavbarComponent } from './navbar/navbar.component';
-
+import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
   declarations: [
-    AppComponent,  AppNavigationComponentComponent, DemoComponent, LoaderComponent, LoginComponent, 
+    AppComponent,  AppNavigationComponentComponent, DemoComponent, LoaderComponent, 
+    LoginComponent, NavbarComponent,
   ],
   imports: [NgxSpinnerModule,
     BrowserModule, CommonModule, FormsModule, CometchatAngularUiKitModule, AppRoutingModule
